@@ -9,10 +9,11 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final double radius;
 
   const AppTextFormField({
     super.key,
-    required this.hintText,
+    this.hintText = '',
     this.controller,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
@@ -20,6 +21,7 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.onChanged,
     this.validator,
+    this.radius = 12,
   });
 
   @override
@@ -36,14 +38,14 @@ class AppTextFormField extends StatelessWidget {
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(radius),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(radius),
           borderSide: const BorderSide(color: Colors.blue),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(radius),
           borderSide: const BorderSide(color: Colors.grey),
         ),
       ),
