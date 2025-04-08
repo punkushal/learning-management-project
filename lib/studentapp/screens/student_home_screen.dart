@@ -102,6 +102,8 @@ class StudentHomeScreen extends StatelessWidget {
                           price: 240000,
                         ),
                         isTrending: false,
+                        imagWidth: 350,
+                        imagHeight: 240,
                       ),
                     );
                   },
