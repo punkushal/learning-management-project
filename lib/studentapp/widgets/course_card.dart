@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:learning_mgmt_app/models/course.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key, required this.course, required this.isTrending});
+  const CourseCard(
+      {super.key,
+      required this.course,
+      required this.isTrending,
+      this.imagHeight,
+      this.imagWidth,
+      this.containerWidth});
   final Course course;
   final bool isTrending;
+  final double? imagHeight;
+  final double? imagWidth;
+  final double? containerWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +92,8 @@ class CourseCard extends StatelessWidget {
                 //Later image will be coming from online
                 child: Image.asset(
                   course.thumbnailUrl,
-                  height: 260,
-                  width: 350,
+                  height: imagHeight,
+                  width: imagWidth,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -101,7 +110,7 @@ class CourseCard extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: 350,
+            width: containerWidth ?? 350,
             child: Padding(
               padding: EdgeInsets.all(12),
               child: Column(
